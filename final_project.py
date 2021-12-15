@@ -57,6 +57,9 @@ def tasks_today(list_of_tasks):
     """
     list[list[str]] --> list[list[str]]
     Return tasks for today.
+    >>> tasks_today([['task', 's', 's', '18.12.2001', '1'], ['task2', 's', 's', '18.12.2001', '2']])
+    No task for today, Relax :)
+    <BLANKLINE>
     """
     from datetime import date
 
@@ -78,14 +81,19 @@ def write_csv(path_file, new_task):
     :param new_task: what to write in csv file
     :param path_file: path to csv file
     :return: nothing
-     writes a new line (task) to csv file
+    writes a new line (task) to csv file
+    >>> write_csv('my_csv.csv', 'task, s, s, 18.12.2001, 1')
+
     """
     with open(path_file, 'a', encoding='utf-8') as csv_file:
         csv_file.write('\n' + new_task)
 
 
 def add_tasks():
-    """Asks information about task and returns it in csv format"""
+    """Asks information about task and returns it in csv format
+    >>> print('Doctest will not work here')
+    Doctest will not work here
+    """
     task = input('Write a task: ')
     location = input('Write a location: ')
     collaborators = input('Write your coworkers: ')
