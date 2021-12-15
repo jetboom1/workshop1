@@ -112,6 +112,7 @@ def add_tasks():
     return ','.join(lst)
 
 if __name__ == '__main__':
+    doctest.testmod(raise_on_error=True)
     print('enter your path to csv file with tasks')
     path = input()
     while True:
