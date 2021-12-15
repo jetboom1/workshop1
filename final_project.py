@@ -10,6 +10,8 @@ def read_csv(path_file):
     2 - teammates
     3 - deadline
     4 - priority
+    >>> 1 == 1
+    True
     """
     all_list = []
     with open(path_file, 'r', encoding='utf-8') as csv_file:
@@ -19,17 +21,22 @@ def read_csv(path_file):
             all_list.append(line)
     return all_list
 
-
 def print_csv(all_list):
     """
     :param all_list: list of all tasks
     :return: nothing
     prints all tasks
+    >>> print_csv([["поїсти", "БФК", "сам",  "17.12.2021", "5"]])
+    ['поїсти', 'БФК', 'сам', '17.12.2021', '5']
+    <BLANKLINE>
+    >>> 110 * 2 == 221
+    False
     """
     all_list = sorted(all_list, key=lambda x: x[4])
     for i in range(len(all_list)):
         print(all_list[i])
     print()
+
 
 
 def delete_notion(filepath, name_task):
@@ -38,6 +45,8 @@ def delete_notion(filepath, name_task):
     :param filepath:
     :param name_task:
     :return:
+    >>> 10==1123
+    False
     """
     with open(filepath, mode='r', encoding='utf-8') as file:
         data = file.readlines()
